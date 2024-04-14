@@ -1,0 +1,91 @@
+
+
+-- ELECTED ADMIN --
+
+
+local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local textChatService = game:GetService("TextChatService")
+local ver = 1.0
+local fact1 = "Made by a faboulus coder! (King_DogeDev)"
+local fact2 = "My main account passively gains adminium from this!"
+local fact3 = "I'm automatically mining this by firing the click detector built inside of the adminium cube!"
+local fact4 = "42134 + 34126 = 76260"
+local fact5 = "I love adminium!"
+local fact6 = "This script currently have 0 lines of code!"
+local fact7 = "My owner can stop me from mining adminium at any time!"
+local fact8 = "Did you know this is a private script made by an amazing coder?"
+local fact9 = "I just mined 5 adminium!"
+local fact10 = "Made by the person that gave you this bot!"
+local fact11 = "Did you know every time I mine 5 adminium there is a 1/5 chance to say a random fact?"
+local count = 0
+local float = false
+local credits = game.Players.LocalPlayer.leaderstats.Credits.Value
+local watchforpay = false
+local pay = 0
+
+local function Chat(msg)
+	if replicatedStorage:FindFirstChild('DefaultChatSystemChatEvents') then
+		replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+	else
+		textChatService.TextChannels.RBXGeneral:SendAsync(msg)
+
+
+	end
+end
+
+game:GetService("Players").King_DogeDev.chatted:Connect(function(msg)
+
+           if msg == "tp" then
+Humanoid.Parent.HumanoidRootPart.CFrame = workspace.King_DogeDev.HumanoidRootPart.CFrame
+
+    end
+end)
+
+game:GetService("Players").King_DogeDev.Chatted:Connect(function(msg)
+	if msg:lower() == "stop" then
+		float = false
+Chat("Stopped")
+	end
+end)
+
+game:GetService("Players").King_DogeDev.Chatted:Connect(function(msg)
+	if msg:lower() == "count" then
+while true do
+	task.wait(3)
+count = count + 1
+end
+	end
+end)
+
+game:GetService("Players").King_DogeDev.Chatted:Connect(function(msg)
+	if msg:lower() == "start" then
+		Chat("Started!")
+		float = true
+		while true do task.wait(0.01)
+			if float == true then 
+				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("MineEvent"):FireServer()
+
+
+			end
+		end
+	end
+end)
+
+game:GetService("Players").King_DogeDev.chatted:Connect(function(msg)
+
+	if msg == "pay" then
+ watchforpay = true
+	end
+end)
+
+game:GetService("Players").King_DogeDev.chatted:Connect(function(msg)
+
+if watchforpay == true then
+		watchforpay = false
+		watchforpay = false
+		watchforpay = false
+	Chat(";Pay King_DogeDev "..msg)
+watchforpay = false
+end
+end)
