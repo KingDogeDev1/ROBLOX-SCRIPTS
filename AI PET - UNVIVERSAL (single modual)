@@ -1,0 +1,307 @@
+-- UNIVERSAL --
+local Humanoid = game.Players.LocalPlayer.Character.Humanoid
+local float = false
+local host = "King_DogeDev"
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local textChatService = game:GetService("TextChatService")
+local copychat = false
+local copynextchat = false
+local enabled = true
+local ver = 1
+local ver1 = 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local function Chat(msg)
+	if enabled == true then
+		if replicatedStorage:FindFirstChild('DefaultChatSystemChatEvents') then
+			replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+		else
+			textChatService.TextChannels.RBXGeneral:SendAsync(msg)
+
+		end 
+	end
+end
+
+
+game:GetService("Players")[host].chatted:Connect(function(msg) 
+	if enabled == true then
+		if msg:lower() == "information" then
+			Chat("Dohickey Control || Made by King_DogeDev/Thing")
+			wait(1)
+			Chat("Main controler: | ".. host .."|  Overseer:  |".. overseer.."|")
+			wait(1)
+			Chat("Version:  ".. ver .. "." .. ver1 )
+			wait(1)
+			Chat("Secret: AI responses will be scripted when i get money from this little project")
+			wait(1)
+			Chat("Current lines of code: 561")
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg) 
+	if enabled == true then
+		if msg:lower() == "recent update" then
+			Chat("Made it so terminate kills the ENTIRE code.")
+			wait(1)
+			Chat("Working on AI chat responses but it costs money :sob:")
+			wait(1)
+			Chat("added -commands- command. ")
+			wait(1)
+			Chat("added -hit the jiggy- command")
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg) 
+	if enabled == true then
+		if msg:lower() == "hit the jiggy" then
+			Chat("/e dance")
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg) 
+	if enabled == true then
+		if msg:lower() == "stop dancing" then
+			Humanoid.Jump = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg) 
+	if enabled == true then
+		if msg:lower() == "commands" then
+			Chat("Commands: up | stop | down | sit | get up | jump | no legs | legs | information |")
+			wait(1)
+			Chat("copy next chat | /e copy next chat | hit the jiggy | copy chat | stop copy chat | recent update | stop dancing | terminate |")
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then
+		if msg:lower() == "stop copy chat" then
+			copychat = false
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then
+		if msg:lower() == "copy chat" then
+			copychat = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "copy next chat" then
+			copynextchat = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "/e copy next chat" then
+			copynextchat = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then	
+		if copynextchat == true then
+			copynextchat = false
+			Chat(msg)
+		end
+	end
+end)
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then
+		if copychat == true then
+
+
+
+			Chat(msg)
+		end
+	end
+end)
+
+
+game:GetService("Players")[host].chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "sit" then
+			Humanoid.Sit = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "get up" then
+
+			Humanoid.Sit = false
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then
+		if msg:lower() == "jump" then
+			Humanoid.Jump = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "come" then
+			Chat("Of course!")
+			local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+			rootPart.CFrame = game.Players[host].Character.HumanoidRootPart.CFrame
+			wait(0.02)
+			rootPart.CFrame = game.Players[host].Character.HumanoidRootPart.CFrame
+			wait(0.02)
+			rootPart.CFrame = game.Players[host].Character.HumanoidRootPart.CFrame
+			wait(0.02)
+			rootPart.CFrame = game.Players[host].Character.HumanoidRootPart.CFrame
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "down" then
+			float = false
+			Humanoid.HipHeight = 0
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "up" then
+			Chat("Say stop to stop floating up and down to go to the ground")
+			float = true
+			while true do task.wait(0.01)
+				if float == true then 
+
+					Humanoid.HipHeight = Humanoid.HipHeight + 0.1
+
+				end
+			end
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "stop" then
+			float = false
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "no legs" then
+			Humanoid.PlatformStand = true
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "legs" then
+			Humanoid.PlatformStand = false
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then	
+		if msg:lower() == "reset" then
+			Chat("Made by King_DogeDev, Hope you had fun")
+			Humanoid.Health = 0
+			local er = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			wait(5)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = er
+			wait(0.05)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = er
+			wait(0.05)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = er
+			script:Destroy()
+			enabled = false
+		end
+	end
+end)
+
+game:GetService("Players")[host].Chatted:Connect(function(msg)
+	if enabled == true then
+		if msg:lower() == "terminate" then
+			Chat("Made by King_DogeDev, Hope you had fun")
+			Humanoid.Health = 0
+			local er = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			wait(5)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = er
+			wait(0.05)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = er
+			wait(0.05)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = er
+			script:Destroy()
+			enabled = false
+		end
+	end
+end)
