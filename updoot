@@ -4,7 +4,7 @@ local humans = {}
 humans["King_DogeDev"] = 6
 humans["9BitByte"] = 6
 humans["donefun13"] = 5
-
+print("skeeebideeeee")
 local que = {}
 local highest = 0
 local Humanoid = game.Players.LocalPlayer.Character.Humanoid
